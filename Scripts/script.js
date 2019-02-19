@@ -32,8 +32,15 @@ function setGradient() {
     css.textContent = body.style.background + ";";
 }
 
+function setColorInputsOnPageLoad() {
+    color1.value = "#ff0000";
+    color2.value = "#FFFF00";
+}
+
 // We want to listen to events in order to listen to the user's actions
 // There is a useful event for inputs called "input"
 // Goal 1
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
+// Make color inputs match the background on pageload.
+window.addEventListener("load", setColorInputsOnPageLoad);
