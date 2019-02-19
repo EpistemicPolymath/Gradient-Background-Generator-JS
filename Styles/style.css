@@ -4,7 +4,7 @@ body {
   text-align: center;
   letter-spacing: .5em;
   top: 15%;
-  background: linear-gradient(to right, red, yellow); /* Standard Syntax */
+  background: linear-gradient(to right, #ff0000, #0000ff); /* Standard Syntax */
 }
 
 h1 {
@@ -22,4 +22,13 @@ h3 {
   text-align: center;
   text-transform: none;
   letter-spacing: 0.01em;
+}
+
+#random {
+  outline: 0;
+  border: 0;
+  padding: 10px 5px;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.47);
+  color: black;
+  background-color: white;
 }

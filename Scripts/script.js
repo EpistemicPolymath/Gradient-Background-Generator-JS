@@ -24,23 +24,24 @@ var body = document.querySelector("#gradient-background");
 // Functions - DRY (Do Not Repeat Yourself)
 function setGradient() {
     // If we want to change the background ideally we need to change the body.background property.
-    // Goal 3
     body.style.background = "linear-gradient(to right, " + color1.value + ", " + color2.value + ")";
 
     // Now we need to show the CSS in our h3 tag
-    // Goal 2
     css.textContent = body.style.background + ";";
 }
 
-function setColorInputsOnPageLoad() {
+function setupOnPageLoad() {
+
+    // Make color inputs match the background on pageload.
     color1.value = "#ff0000";
-    color2.value = "#FFFF00";
+    color2.value = "#0000ff";
+    // Displaying initial CSS linear gradient property on pageload.
+    setGradient();
 }
 
 // We want to listen to events in order to listen to the user's actions
 // There is a useful event for inputs called "input"
-// Goal 1
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
-// Make color inputs match the background on pageload.
-window.addEventListener("load", setColorInputsOnPageLoad);
+// Added a event listener to the window object on pageload.
+window.addEventListener("load", setupOnPageLoad);
