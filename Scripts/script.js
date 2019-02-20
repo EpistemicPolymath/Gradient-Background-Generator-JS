@@ -40,12 +40,29 @@ function setupOnPageLoad() {
 }
 
 function setRandomColors() {
-    // Generate new random colors for Hex Codes
-    // https://stackoverflow.com/questions/5092808/how-do-i-randomly-generate-html-hex-color-codes-using-javascript
-    // https://stackoverflow.com/questions/1484506/random-color-generator
-    color1.value = "#" + ('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6);
-    color2.value = "#" + ('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6);
+
+    // Created my own Hex Generator w/ the help of a friend
+    function getHexSegment () {
+        // Each segment is 0-255 encoded in hex, or 00 - ff
+        // https://www.w3schools.com/js/js_random.asp
+        var hexValue = Math.floor(Math.random() * 256).toString(16);
+        // Add the hexValue with a leading '0' to get "a" to "0a"
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+        var newHex = hexValue.padStart(2, '0');
+        console.log(newHex);
+        return newHex;
+    }
+    // Generate Red Hex
+    var red = getHexSegment();
+    // Generate Green Hex
+    var green = getHexSegment();
+    // Generate Blue Hex
+    var blue = getHexSegment();
+    // Set the Colors
+    color1.value = "#" + red + green + blue;
+    color2.value = "#" + red + green + blue;
     setGradient();
+    getHexSegment();
 }
 
 // We want to listen to events in order to listen to the user's actions
