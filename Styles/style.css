@@ -24,11 +24,14 @@ h3 {
   letter-spacing: 0.01em;
 }
 
-#random {
-  outline: 0;
-  border: 0;
-  padding: 10px 5px;
+button#random {
+  outline: 0px;
+  border: 0px;
+  padding: 15px 8px;
   box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.47);
   color: black;
   background-color: white;
+  font-family: Source Sans Pro;
+  font-weight: bold;
+  font-size: 1em;
 }

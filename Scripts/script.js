@@ -20,6 +20,7 @@ var css = document.querySelector("#style-output");
 var color1 = document.querySelector(".color1");
 var color2 = document.querySelector(".color2");
 var body = document.querySelector("#gradient-background");
+var randomButton = document.querySelector("#random");
 
 // Functions - DRY (Do Not Repeat Yourself)
 function setGradient() {
@@ -31,11 +32,19 @@ function setGradient() {
 }
 
 function setupOnPageLoad() {
-
     // Make color inputs match the background on pageload.
     color1.value = "#ff0000";
     color2.value = "#0000ff";
     // Displaying initial CSS linear gradient property on pageload.
+    setGradient();
+}
+
+function setRandomColors() {
+    // Generate new random colors for Hex Codes
+    // https://stackoverflow.com/questions/5092808/how-do-i-randomly-generate-html-hex-color-codes-using-javascript
+    // https://stackoverflow.com/questions/1484506/random-color-generator
+    color1.value = "#" + ('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6);
+    color2.value = "#" + ('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6);
     setGradient();
 }
 
@@ -45,3 +54,5 @@ color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
 // Added a event listener to the window object on pageload.
 window.addEventListener("load", setupOnPageLoad);
+// Add an event listener for randomButton click
+randomButton.addEventListener("click", setRandomColors);
