@@ -52,17 +52,10 @@ function setRandomColors() {
         console.log(newHex);
         return newHex;
     }
-    // Generate Red Hex
-    var red = getHexSegment();
-    // Generate Green Hex
-    var green = getHexSegment();
-    // Generate Blue Hex
-    var blue = getHexSegment();
     // Set the Colors
-    color1.value = "#" + red + green + blue;
-    color2.value = "#" + red + green + blue;
+    color1.value = "#" + getHexSegment() + getHexSegment() + getHexSegment();
+    color2.value = "#" + getHexSegment() + getHexSegment() + getHexSegment();
     setGradient();
-    getHexSegment();
 }
 
 // We want to listen to events in order to listen to the user's actions
